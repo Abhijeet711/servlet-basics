@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Color!</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            #button {
+                padding: 5px;
+                font-weight: bold;
+                font-size: 1em;
+                border:1px solid #004080;
+            }
+            #text{
+                padding: 5px;
+                font-size: 1em;
+                border:1px solid #004080;
+            }
+        </style>
+    </head>
+    <body>
+<div>
+            <form action="textcolor" method="get">
+                <fieldset style="margin:auto; padding:20px; width: 400px; height: 300px; font-size:20px">
+                    <legend>Text Color</legend>
+                    <label for="text">Enter your text: </label>
+                    <input type="text" name="text" autocomplete="off" id="text"><br><br>
+                    <label for="bgc">Select Background Color: </label>
+                    <select name="bgc">
+                        <option value="sbg">--select--</option>
+                        <option value="cyan">cyan</option>
+                        <option value="red">red</option>
+                        <option value="yellow">yellow</option>
+                        <option value="green">green</option>
+                        <option value="black">black</option>
+                        <option value="white">white</option>
+                        <option value="chartreuse">chartreuse</option>
+                        <option value="coral">coral</option>
+                        <option value="pink">pink</option>
+                        <option value="goldenrod">goldenrod</option>
+                        <option value="purple">purple</option>
+                        <option value="peachpuff">peachpuff</option>
+                    </select><br><br>
+                    <label for="fsz">Select Font Size: </label>
+                    <select name="fsz">
+                        <option value="sfs">--select--</option>
+                        <option value="14">14</option>
+                        <option value="18">18</option>
+                        <option value="20">20</option>
+                        <option value="24">24</option>
+                        <option value="32">32</option>
+                        <option value="40">40</option>
+                        <option value="48">48</option>
+                        <option value="56">56</option>
+                        <option value="64">64</option>
+                        <option value="72">72</option>
+                    </select><br><br>
+                    <label for="fc">Select Font Color: </label>
+                    <select name="fc">
+                        <option value="sfc">--select--</option>
+                        <option value="cyan">cyan</option>
+                        <option value="red">red</option>
+                        <option value="yellow">yellow</option>
+                        <option value="green">green</option>
+                        <option value="black">black</option>
+                        <option value="white">white</option>
+                        <option value="chartreuse">chartreuse</option>
+                        <option value="coral">coral</option>
+                        <option value="pink">pink</option>
+                        <option value="goldenrod">goldenrod</option>
+                        <option value="purple">purple</option>
+                        <option value="peachpuff">peachpuff</option>
+                    </select><br><br>
+                    <label for="ff">Select Font Family: </label>
+                    <select name="ff">
+                        <option value="sff">--select--</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Arial">Arial</option>
+                        <option value="Courier New">Courier New</option>
+                        <option value="Franklin Gothic Medium">Franklin Gothic Medium</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Impact">Impact</option>
+                        <option value="Tahoma">Tahoma</option>
+                        <option value="Geneva">Geneva</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Cambria">Cambria</option>
+                    </select><br><br>
+                    <center>
+                        <input id="button" type="submit" value="Go">
+                        <input id="button" type="reset" value="Clear Form">
+                    </center>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
