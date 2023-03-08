@@ -13,14 +13,14 @@ and open the template in the editor.
     <body>
         <div>
             <form action="register" method="get">
-                <fieldset style="margin:auto; padding:20px; width: 300px; height: 300px;">
+                <fieldset style="margin:auto; padding:20px; width: 300px; height: 315px;">
                     <legend>Registration Page</legend>
                     <label for="user" style="padding-right: 50px">Username: </label>
                     <input type="text" name="user" autocomplete="off"><br><br>
                     <label for="email" style="padding-right: 77px">Email: </label>
                     <input type="email" name="email" autocomplete="off"><br><br>
                     <label for="phone" style="padding-right: 20px">Phone Number: </label>
-                    <input type="number" name="phone" autocomplete="off"><br><br>
+                    <input type="text" name="phone" title="Enter 10 digit phone number" pattern="[1-9]{1}[0-9]{9}" autocomplete="off"><br><br>
                     <label for="pass" style="padding-right: 55px">Password: </label>
                     <input type="password" name="pass" autocomplete="off"><br><br>
                     <label for="gender" style="padding-right: 58px">Gender: </label>
@@ -35,7 +35,10 @@ and open the template in the editor.
                         <option value="Hindi">Hindi</option>
                         <option value="Marathi">Marathi</option>
                         <option value="English">English</option>
-                    </select><br><br><br>
+                    </select><br><br>
+                    <label for="dob" style="padding-right: 32px">Date of Birth: </label>
+                    <input type="date" name="dob">
+                    <br><br>
                     <center>
                         <input type="submit" value="Register!">
                     </center>
