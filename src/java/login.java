@@ -11,14 +11,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
- * @author studentadmin
+ * @author Abhi
  */
-public class register extends HttpServlet {
+public class login extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -28,52 +26,40 @@ public class register extends HttpServlet {
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
-     * @throws java.lang.ClassNotFoundException
-     * @throws java.sql.SQLException
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String r1 = request.getParameter("user");
         String r2 = request.getParameter("email");
-        String r3 = request.getParameter("phone");
         String r4 = request.getParameter("pass");
-        String r5 = request.getParameter("gender");
-        String r6 = request.getParameter("lang");
-        String r7 = request.getParameter("dob");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet register</title>");            
+            out.println("<title>Servlet login</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet register at " + request.getContextPath() + "</h1>");
-            out.println("Username: " + r1 + "<br>");
-            out.println("Email: " + r2 + "<br>");
-            out.println("Phone Number: " + r3 + "<br>");
-            out.println("Password: " + r4 + "<br>");
-            out.println("Gender: " + r5 + "<br>");
-            out.println("Mother Tongue: " + r6 + "<br>");
-            out.println("Date of Birth is: " + r7 + "<br>");
+            //out.println("<h1>Servlet login at " + request.getContextPath() + "</h1>");
             try{
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
-                String iq = "INSERT INTO reg1(username,email,phone,password,gender,mt,dob) VALUES(?,?,?,?,?,?,?);";
-                PreparedStatement ps = conn.prepareStatement(iq);
-                ps.setString(1,r1);
-                ps.setString(2,r2);
-                ps.setString(3,r3);
-                ps.setString(4,r4);
-                ps.setString(5,r5);
-                ps.setString(6,r6);
-                ps.setString(7,r7);
-                int i = ps.executeUpdate();
-                System.out.println("executed: " + i);
-                ps.close();
-                conn.close();
-            }catch(ClassNotFoundException |SQLException e){
+                String sql = "SELECT id, username, password FROM reg1 where username=? and password=?";
+                PreparedStatement ps = conn.prepareCall(sql);
+                ps.setString(1, r2);
+                ps.setString(2, r4);
+                ResultSet rs;
+                rs = ps.executeQuery();
+                String id = null;
+                while(rs.next()){
+                    id = rs.getString("id");
+                }
+                if(id!=null){
+                    out.println("login sucessful for user " +r2);
+                }else{
+                    out.println("login failed");
+                }
+            }catch(ClassNotFoundException | SQLException e){
                 e.printStackTrace();
             }
             out.println("</body>");
