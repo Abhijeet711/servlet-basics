@@ -11,12 +11,21 @@ body{
     background-color: palevioletred; 
     font-size: 20px;
 }   
+
 legend{
     font-weight: bold;
 }
+
 input{
-    font-size: 20px; border:1px solid #004080
+    font-size: 20px; 
+    border:1px solid #004080;
 }
+
 label{
     font-weight: bold;
 }
+
+/*select{
+    font-size: 20px; 
+    border:1px solid #004080;
+}*/
