@@ -7,4 +7,4 @@ context_param.java - getServletContext() -> servlet context using web.xml <br>
 NewServlet.java - initialize parameters in deployment descriptor using web.xml <br> 
 ReqInterface.java - getParameterNames(), getParameterValues() -> different types of get paramters methods. <br>
 register.java -> basic register page using mysql that takes various inputs. <br>
-login.java -> login page for the above created register page(still working on it). <br>
+login.java -> login page for the above created register page. <br>
