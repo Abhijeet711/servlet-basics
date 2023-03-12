@@ -77,7 +77,7 @@ public class textcolor extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
-            out.println("<html><head><title>Servlet textcolor</title>");
+            out.println("<html><head><title>Servlet textcolor</title><link rel=\"stylesheet\" href=\"styles.css\">");
             out.println("<style>div{\n"
                     + "    background-color:"+s1+";\n"
                     + "    font-size:"+s2+"px;\n"

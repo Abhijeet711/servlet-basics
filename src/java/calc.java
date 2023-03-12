@@ -103,7 +103,7 @@ public class calc extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
-            out.println("<head>");
+            out.println("<head><link rel=\"stylesheet\" href=\"styles.css\">");
             out.println("<title>Servlet Calculator</title></head>");
             out.println("<body style=\"margin:auto; width: 360px; height: 200px; margin-top:20px; padding-top:20px; border:2px solid black; font-size: 20px;\">");
             //out.println("<h1>Servlet calc at " + request.getContextPath() + "</h1>");

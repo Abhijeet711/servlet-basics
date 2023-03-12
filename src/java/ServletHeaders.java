@@ -34,10 +34,10 @@ public class ServletHeaders extends HttpServlet {
             String title = "Servlet Example";
             out.println("<!DOCTYPE html>");
             out.println("<html>");
-            out.println("<head>");
+            out.println("<head><link rel=\"stylesheet\" href=\"styles.css\">");
             out.println("<style>");
-            out.println("body{color: blue; font-size:20px;padding-top:15px}");
-            out.println("td{border: 2px solid black;}");
+            out.println("body{color: black; font-size:20px;}");
+            out.println("td{border: 2px solid black; padding: 10px;}");
             out.println("th{border: 2px solid black;}");
             out.println("</style>");
             out.println("<title>Header Information</title>");      

@@ -36,7 +36,7 @@ public class login extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
-            out.println("<head><style>body{background-color: palevioletred;font-size: 20px;} legend{font-weight: bold;} input{ font-size: 20px; border:1px solid #004080} label{font-weight: bold;}</style>");
+            out.println("<head><style>body{background-color: palevioletred;font-size: 20px;} legend{font-weight: bold;} input{ font-size: 20px; border:1px solid #004080} label{font-weight: bold;} th, td{ padding: 15px; }</style>");
             out.println("<title>Servlet login</title>");            
             out.println("</head>");
             out.println("<body>");
@@ -55,8 +55,19 @@ public class login extends HttpServlet {
                     id = rs.getString("id");
                 }
                 if(id!=null){
-                    out.println("login sucessful for user " +r2);
-                    out.println("");
+                    out.println("login successful for user " + r2);
+                    out.println("<div><br><table border=\"1px\">");
+                    out.println("<tr><th>Practical Name</th><th>Link</th></tr>");
+                    out.println("<tr><td>Web application using HttpServlet demonstrating doGet() method</td><td><a href=\"textcolor.html\">Click</a></td></tr>");
+                    out.println("<tr><td>Web application using HttpServlet demonstrating doPost() method</td><td><a href=\"calc.html\">Click</a></td></tr>");
+                    out.println("<tr><td>Web application to display Http Request Headers</td><td><a href=\"ServletHeaders\">Click</a></td></tr>");
+                    out.println("<tr><td>Web application to Initialize Parameters using web.xml</td><td><a href=\"NewServlet\">Click</a></td></tr>");
+                    out.println("<tr><td>Web application to demonstrate Servlet Context Parameters</td><td><a href=\"context_param\">Click</a></td></tr>");
+                    out.println("<tr><td>Web application using Http Servlet Request getParameter() methods</td><td><a href=\"ReqInterface.html\">Click</a></td>");
+                    
+//TEMPLATE-> out.println("<tr><td>PRACTICAL NAME</td><td><a href=\"LINK\">Click</a></td>");
+                    
+                    out.println("</tr></table></div>");
                 }else{
                     out.println("login failed");
                 }

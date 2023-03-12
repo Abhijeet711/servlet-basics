@@ -34,7 +34,7 @@ public class ReqInterface extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
-            out.println("<head>");
+            out.println("<head><link rel=\"stylesheet\" href=\"styles.css\">");
             out.println("<title>Servlet ReqInterface</title>");            
             out.println("</head>");
             out.println("<body style='font-size:20px'><br>");
