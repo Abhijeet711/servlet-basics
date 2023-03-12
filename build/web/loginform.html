@@ -9,20 +9,36 @@ and open the template in the editor.
         <title>Login!</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
+        <style>
+            body{
+                background-color: palevioletred; 
+                font-size: 20px;
+            }   
+            legend{
+                font-weight: bold;
+            }
+            input{
+                font-size: 20px; border:1px solid #004080
+            }
+            label{
+                font-weight: bold;
+            }
+        </style>
     </head>
     <body>
         <div>
             <form action="login" method="get">
-                <fieldset style="margin:auto; padding:20px; width: 300px; height: 115px;">
+                <fieldset style="margin:auto; padding:20px; width: 380px; height: 200px;">
                     <legend>Login Page</legend>
-                    <label for="email" style="padding-right: 77px">Email: </label>
+                    <label for="email" style="padding-right: 51px">Email: </label>
                     <input type="email" name="email" autocomplete="off"><br><br>
-                    <label for="pass" style="padding-right: 55px">Password: </label>
+                    <label for="pass" style="padding-right: 20px">Password: </label>
                     <input type="password" name="pass" autocomplete="off"><br><br>
                     <center>
-                        <input type="submit" value="Login!">
-                        <input type="reset" value="Clear Form">
-                    </center>
+                        <input type="submit" value="Login" style="font-size: 20px; border:1px solid #004080;">
+                        <input type="reset" value="Clear Form" style="font-size: 20px; border:1px solid #004080;">
+                    </center><br>
+                    <label>Don't have an account? Register </label><a href="registerform.html">here!</a>                    
                 </fieldset>
             </form>
         </div>

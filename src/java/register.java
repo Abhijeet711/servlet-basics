@@ -34,7 +34,8 @@ public class register extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String r1 = request.getParameter("user");
+        String r0 = request.getParameter("fname");
+        String r1 = request.getParameter("lname");
         String r2 = request.getParameter("email");
         String r3 = request.getParameter("phone");
         String r4 = request.getParameter("pass");
@@ -50,7 +51,8 @@ public class register extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet register at " + request.getContextPath() + "</h1>");
-            out.println("Username: " + r1 + "<br>");
+            out.println("First Name: " + r0 + "<br>");
+            out.println("Last Name: " + r1 + "<br>");
             out.println("Email: " + r2 + "<br>");
             out.println("Phone Number: " + r3 + "<br>");
             out.println("Password: " + r4 + "<br>");
@@ -60,15 +62,16 @@ public class register extends HttpServlet {
             try{
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
-                String iq = "INSERT INTO reg1(username,email,phone,password,gender,mt,dob) VALUES(?,?,?,?,?,?,?);";
+                String iq = "INSERT INTO reg1(fname,lname,email,phone,password,gender,mt,dob) VALUES(?,?,?,?,?,?,?,?);";
                 PreparedStatement ps = conn.prepareStatement(iq);
-                ps.setString(1,r1);
-                ps.setString(2,r2);
-                ps.setString(3,r3);
-                ps.setString(4,r4);
-                ps.setString(5,r5);
-                ps.setString(6,r6);
-                ps.setString(7,r7);
+                ps.setString(1,r0);
+                ps.setString(2,r1);
+                ps.setString(3,r2);
+                ps.setString(4,r3);
+                ps.setString(5,r4);
+                ps.setString(6,r5);
+                ps.setString(7,r6);
+                ps.setString(8,r7);
                 int i = ps.executeUpdate();
                 System.out.println("executed: " + i);
                 ps.close();

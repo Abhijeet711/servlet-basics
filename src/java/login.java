@@ -36,7 +36,7 @@ public class login extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
-            out.println("<head>");
+            out.println("<head><style>body{background-color: palevioletred;font-size: 20px;} legend{font-weight: bold;} input{ font-size: 20px; border:1px solid #004080} label{font-weight: bold;}</style>");
             out.println("<title>Servlet login</title>");            
             out.println("</head>");
             out.println("<body>");
@@ -44,7 +44,7 @@ public class login extends HttpServlet {
             try{
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
-                String sql = "SELECT id, username, password FROM reg1 where username=? and password=?";
+                String sql = "SELECT id FROM reg1 where email=? and password=?";
                 PreparedStatement ps = conn.prepareCall(sql);
                 ps.setString(1, r2);
                 ps.setString(2, r4);
@@ -56,6 +56,7 @@ public class login extends HttpServlet {
                 }
                 if(id!=null){
                     out.println("login sucessful for user " +r2);
+                    out.println("");
                 }else{
                     out.println("login failed");
                 }

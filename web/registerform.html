@@ -9,40 +9,58 @@ and open the template in the editor.
         <title>Register!</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                background-color: palevioletred; 
+                font-size: 20px;
+            }
+            legend{
+                font-weight: bold;
+            }
+            input{
+                font-size: 20px; border:1px solid #004080
+            }
+            label{
+                font-weight: bold;
+            }
+        </style>
     </head>
     <body>
         <div>
             <form action="register" method="get">
-                <fieldset style="margin:auto; padding:20px; width: 300px; height: 315px;">
+                <fieldset style="margin:auto; padding:20px; width: 430px; height: 490px;">
                     <legend>Registration Page</legend>
-                    <label for="user" style="padding-right: 50px">Username: </label>
-                    <input type="text" name="user" autocomplete="off"><br><br>
-                    <label for="email" style="padding-right: 77px">Email: </label>
+                    <label for="fname" style="padding-right: 54px">First Name: </label>
+                    <input type="text" name="fname" autocomplete="off"><br><br>
+                    <label for="lname" style="padding-right: 57px">Last Name: </label>
+                    <input type="text" name="lname" autocomplete="off"><br><br>
+                    <label for="email" style="padding-right: 99px">Email: </label>
                     <input type="email" name="email" autocomplete="off"><br><br>
                     <label for="phone" style="padding-right: 20px">Phone Number: </label>
                     <input type="text" name="phone" title="Enter 10 digit phone number" pattern="[1-9]{1}[0-9]{9}" autocomplete="off"><br><br>
-                    <label for="pass" style="padding-right: 55px">Password: </label>
+                    <label for="pass" style="padding-right: 67px">Password: </label>
                     <input type="password" name="pass" autocomplete="off"><br><br>
-                    <label for="gender" style="padding-right: 58px">Gender: </label>
-                    <label for="gender" style="padding-left:10px;">Male</label>
+                    <label for="gender" style="padding-right: 85px">Gender: </label>
+                    <label for="gender">Male</label>
                     <input type="radio" name="gender" id="1" value="Male">
-                    <label for="gender" style="padding-left:10px;">Female</label>
+                    <label for="gender">Female</label>
                     <input type="radio" name="gender" id="2" value="Female">
                     <br><br>
                     <label for="lang" style="padding-right: 18px">Mother Tongue: </label>
-                    <select name="lang">
+                    <select name="lang" style="font-size: 20px; border:1px solid #004080;">
                         <option value="sl">--select language--</option>
                         <option value="Hindi">Hindi</option>
                         <option value="Marathi">Marathi</option>
                         <option value="English">English</option>
                     </select><br><br>
-                    <label for="dob" style="padding-right: 32px">Date of Birth: </label>
+                    <label for="dob" style="padding-right: 38px">Date of Birth: </label>
                     <input type="date" name="dob">
                     <br><br>
-                    <center>
-                        <input type="submit" value="Register!">
-                        <input type="reset" value="Clear Form">
-                    </center>
+                     <center>
+                        <input type="submit" value="Register">
+                        <input type="reset" value="Clear Form"> 
+                     </center><br>
+                     <label>Already have an account? Login </label><a href="loginform.html">here!</a>
                 </fieldset>
             </form>
         </div>
