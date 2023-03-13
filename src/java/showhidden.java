@@ -10,14 +10,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.sql.*;
-import javax.servlet.RequestDispatcher;
 
 /**
  *
  * @author Abhi
  */
-public class login extends HttpServlet {
+public class showhidden extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,44 +29,23 @@ public class login extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String r2 = request.getParameter("email");
-        String r4 = request.getParameter("pass");
+        String n = request.getParameter("t1");
+        String em = request.getParameter("t2");
+        String c = request.getParameter("t3");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
-            out.println("<head><style>body{background-color: palevioletred;font-size: 20px;} legend{font-weight: bold;} input{ font-size: 20px; border:1px solid #004080} label{font-weight: bold;} th, td{ padding: 15px; }</style>");
-            out.println("<title>Servlet login</title>");            
+            out.println("<head><link rel=\"stylesheet\" href=\"styles.css\">");
+            out.println("<title>Servlet showhidden</title>");            
             out.println("</head>");
             out.println("<body>");
-            //out.println("<h1>Servlet login at " + request.getContextPath() + "</h1>");
-            try{
-                Class.forName("com.mysql.jdbc.Driver");
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
-                String sql = "SELECT id FROM reg1 where email=? and password=?";
-                PreparedStatement ps = conn.prepareCall(sql);
-                ps.setString(1, r2);
-                ps.setString(2, r4);
-                ResultSet rs;
-                rs = ps.executeQuery();
-                String id = null;
-                while(rs.next()){
-                    id = rs.getString("id");
-                }
-                if(id!=null){
-                    out.println("<br><center>login successful for user " + r2 + "</center>");
-                    RequestDispatcher rd = request.getRequestDispatcher("home.html");
-                    rd.include(request, response);
-                    
-                }else{                    
-                    out.println("<center style='font-weight:bold;font-size:40px;color:red;background-color:black'>Login failed, incorrect email or password.</center><br><br>");
-                    RequestDispatcher rd = request.getRequestDispatcher("loginform.html");
-                    rd.include(request, response);
-                    //response.sendRedirect("loginfail.html");
-                }
-            }catch(ClassNotFoundException | SQLException e){
-                e.printStackTrace();
-            }
+            //out.println("<h1>Servlet showhidden at " + request.getContextPath() + "</h1>");
+            out.println("<br><fieldset><center>Your name displayed in servlet2(showhidden) is: " + n + "<br><br>");
+            out.println("Your email displayed in servlet2(showhidden) is: " + em + "<br><br>");
+            out.println("Your country displayed in servlet2(showhidden) is: " + c + "<br>");
+            out.println("<form action='' method=''>");
+            out.println("</fieldset></center>");
             out.println("</body>");
             out.println("</html>");
         }
