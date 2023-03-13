@@ -56,20 +56,11 @@ public class login extends HttpServlet {
                 }
                 if(id!=null){
                     out.println("login successful for user " + r2);
-                    out.println("<div><br><table border=\"1px\">");
-                    out.println("<tr><th>Practical Name</th><th>Link</th></tr>");
-                    out.println("<tr><td>Web application using HttpServlet demonstrating doGet() method</td><td><a href=\"textcolor.html\">Click</a></td></tr>");
-                    out.println("<tr><td>Web application using HttpServlet demonstrating doPost() method</td><td><a href=\"calc.html\">Click</a></td></tr>");
-                    out.println("<tr><td>Web application to display Http Request Headers</td><td><a href=\"ServletHeaders\">Click</a></td></tr>");
-                    out.println("<tr><td>Web application to Initialize Parameters using web.xml</td><td><a href=\"NewServlet\">Click</a></td></tr>");
-                    out.println("<tr><td>Web application to demonstrate Servlet Context Parameters</td><td><a href=\"context_param\">Click</a></td></tr>");
-                    out.println("<tr><td>Web application using Http Servlet Request getParameter() methods</td><td><a href=\"ReqInterface.html\">Click</a></td>");
+                    response.sendRedirect("loginsuccess.html");
                     
-//TEMPLATE-> out.println("<tr><td>PRACTICAL NAME</td><td><a href=\"LINK\">Click</a></td>");
-                    
-                    out.println("</tr></table></div>");
                 }else{
                     out.println("login failed");
+                    response.sendRedirect("loginfail.html");
                 }
             }catch(ClassNotFoundException | SQLException e){
                 e.printStackTrace();

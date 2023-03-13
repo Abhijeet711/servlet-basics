@@ -74,6 +74,7 @@ public class register extends HttpServlet {
                 ps.setString(8,r7);
                 int i = ps.executeUpdate();
                 System.out.println("executed: " + i);
+                response.sendRedirect("loginform.html");
                 ps.close();
                 conn.close();
             }catch(ClassNotFoundException |SQLException e){
