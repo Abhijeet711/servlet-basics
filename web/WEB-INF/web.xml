@@ -48,6 +48,18 @@
         <servlet-name>showhidden</servlet-name>
         <servlet-class>showhidden</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PageHitCounter</servlet-name>
+        <servlet-class>PageHitCounter</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>sessioncookies1</servlet-name>
+        <servlet-class>sessioncookies1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>sessioncookies2</servlet-name>
+        <servlet-class>sessioncookies2</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NewServlet</servlet-name>
         <url-pattern>/NewServlet</url-pattern>
@@ -87,6 +99,18 @@
     <servlet-mapping>
         <servlet-name>showhidden</servlet-name>
         <url-pattern>/showhidden</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PageHitCounter</servlet-name>
+        <url-pattern>/PageHitCounter</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sessioncookies1</servlet-name>
+        <url-pattern>/sessioncookies1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>sessioncookies2</servlet-name>
+        <url-pattern>/sessioncookies2</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

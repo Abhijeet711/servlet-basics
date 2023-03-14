@@ -19,6 +19,7 @@ legend{
 input{
     font-size: 20px; 
     border:1px solid #004080;
+    autocomplete: off;
 }
 
 label{
