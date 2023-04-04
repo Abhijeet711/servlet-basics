@@ -52,7 +52,7 @@ public class PageRefresh extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             //out.println("<h1>Servlet PageRefresh at " + request.getContextPath() + "</h1>");
-            out.println("<h1 align='center'>Auto Refresh Page</h1>");
+            out.println("<center><h1 style='color: #6d435a; background-color:#b1ede8; padding:8px ;border-radius: 8px; width:fit-content;'>Page Refresh</h1></center>");
             out.println("<h2 align='center'>Current Time: " + CT + "</h2>");
             out.println("</body>");
             out.println("</html>");

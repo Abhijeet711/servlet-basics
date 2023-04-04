@@ -34,9 +34,9 @@ public class ServletHeaders extends HttpServlet {
             String title = "Servlet Example";
             out.println("<!DOCTYPE html>");
             out.println("<html>");
-            out.println("<head><link rel=\"stylesheet\" href=\"styles.css\">");
+            out.println("<head><link rel='stylesheet' href='styles.css'>");
             out.println("<style>");
-            out.println("body{color: black; font-size:20px;}");
+            out.println("body{color: #fffcf9; font-size:20px;}");
             out.println("td{border: 2px solid black; padding: 10px;}");
             out.println("th{border: 2px solid black;}");
             out.println("</style>");
@@ -44,7 +44,7 @@ public class ServletHeaders extends HttpServlet {
             out.println("</head>");                 
             out.println("<body>");
             out.println("<center>");
-            out.println("<h2><u>Servlet Headers</u></h2>");
+            out.println("<center><h1 style=\"color: #6d435a; background-color:#b1ede8; padding:8px ;border-radius: 8px; width:fit-content;\">Servlet Headers</h1></center>");
             out.println("<table>");
             out.println("<tr><th>Header Name</th><th>Header Value</th></tr>");
             out.println("<tr><td>request method</td><td>" + request.getMethod() + "</td></tr>");

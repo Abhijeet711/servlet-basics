@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 
 /**
  *
@@ -42,6 +43,7 @@ public class register extends HttpServlet {
         String r5 = request.getParameter("gender");
         String r6 = request.getParameter("lang");
         String r7 = request.getParameter("dob");
+        String r8 = request.getParameter("cpass");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
@@ -50,32 +52,53 @@ public class register extends HttpServlet {
             out.println("<title>Servlet register</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet register at " + request.getContextPath() + "</h1>");
-            out.println("First Name: " + r0 + "<br>");
-            out.println("Last Name: " + r1 + "<br>");
-            out.println("Email: " + r2 + "<br>");
-            out.println("Phone Number: " + r3 + "<br>");
-            out.println("Password: " + r4 + "<br>");
-            out.println("Gender: " + r5 + "<br>");
-            out.println("Mother Tongue: " + r6 + "<br>");
-            out.println("Date of Birth is: " + r7 + "<br>");
+    //            out.println("<h1>Servlet register at " + request.getContextPath() + "</h1>");
+    //            out.println("First Name: " + r0 + "<br>");
+    //            out.println("Last Name: " + r1 + "<br>");
+    //            out.println("Email: " + r2 + "<br>");
+    //            out.println("Phone Number: " + r3 + "<br>");
+    //            out.println("Password: " + r4 + "<br>");
+    //            out.println("Confirm Password: "+ r8 + "<br>");
+    //            out.println("Gender: " + r5 + "<br>");
+    //            out.println("Mother Tongue: " + r6 + "<br>");
+    //            out.println("Date of Birth is: " + r7 + "<br>");
             try{
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
-                String iq = "INSERT INTO reg1(fname,lname,email,phone,password,gender,mt,dob) VALUES(?,?,?,?,?,?,?,?);";
-                PreparedStatement ps = conn.prepareStatement(iq);
-                ps.setString(1,r0);
-                ps.setString(2,r1);
-                ps.setString(3,r2);
-                ps.setString(4,r3);
-                ps.setString(5,r4);
-                ps.setString(6,r5);
-                ps.setString(7,r6);
-                ps.setString(8,r7);
-                int i = ps.executeUpdate();
-                System.out.println("executed: " + i);
-                response.sendRedirect("loginform.html");
-                ps.close();
+                if(!r4.equals(r8)){
+                    out.println("<center style='font-weight:bold;font-size:40px;color:red;background-color:black'>Passwords do not match, please try again.</center><br><br>");
+                    RequestDispatcher rd = request.getRequestDispatcher("registerform.html");
+                    rd.include(request, response);
+                }
+                else{
+                    String iq = "INSERT INTO reg1(fname,lname,email,phone,password,gender,mt,dob) VALUES(?,?,?,?,?,?,?,?);";
+                    PreparedStatement ps = conn.prepareStatement(iq);
+                    ps.setString(1,r0);
+                    ps.setString(2,r1);
+                    ps.setString(3,r2);
+                    ps.setString(4,r3);
+                    ps.setString(5,r4);
+                    ps.setString(6,r5);
+                    ps.setString(7,r6);
+                    ps.setString(8,r7);
+                    int i = ps.executeUpdate();
+                    System.out.println("executed: " + i);
+                    response.sendRedirect("loginform.html");
+                    ps.close();
+                }
+//                String iq = "INSERT INTO reg1(fname,lname,email,phone,password,gender,mt,dob) VALUES(?,?,?,?,?,?,?,?);";
+//                PreparedStatement ps = conn.prepareStatement(iq);
+//                ps.setString(1,r0);
+//                ps.setString(2,r1);
+//                ps.setString(3,r2);
+//                ps.setString(4,r3);
+//                ps.setString(5,r4);
+//                ps.setString(6,r5);
+//                ps.setString(7,r6);
+//                ps.setString(8,r7);
+//                int i = ps.executeUpdate();
+//                System.out.println("executed: " + i);
+//                response.sendRedirect("loginform.html");
                 conn.close();
             }catch(ClassNotFoundException |SQLException e){
                 e.printStackTrace();

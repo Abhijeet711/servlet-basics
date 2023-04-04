@@ -41,7 +41,8 @@ public class context_param extends HttpServlet {
             out.println("<title>Servlet context_param</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet context_param at " + s1 + "</h1>");
+            out.println("<center><h1 style=\"color: #6d435a; background-color:#b1ede8; padding:8px ;border-radius: 8px; width:fit-content;\">Context Parameters using web.xml</h1></center>");
+            out.println("<h1>Servlet context_param is " + s1 + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

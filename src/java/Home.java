@@ -39,8 +39,8 @@ public class Home extends HttpServlet {
             //out.println("<h1>Servlet Home at " + request.getContextPath() + "</h1>");
             out.println("<html><head><title>Home</title><link rel='stylesheet' href='styles.css'><style>th, td{ padding: 15px;}</style><head>");
             out.println("<body><div><center>");
-            out.println("<h2>Welcome " + email1 + "</h2>");
-            out.println("<table border='1px' style='font-size:25px'><tr><th>Sr No.</th><th>Practical Name</th></tr>");           
+            out.println("<center><h1 style=\"color: #6d435a; background-color:#b1ede8; padding:8px ;border-radius: 8px; width:fit-content;\">Welcome "+ email1 +"</h1></center>");
+            out.println("<table border='1px'><tr><th>Sr No.</th><th>Practical Name</th></tr>");           
             out.println("<tr><td>1</td><td><a href='textcolor.html'>Web application using HttpServlet demonstrating doGet() method</a></td></tr>");
             out.println("<tr><td>2</td><td><a href='calc.html'>Web application using HttpServlet demonstrating doPost() method</a></td></tr>");
             out.println("<tr><td>3</td><td><a href='ServletHeaders'>Web application to display Http Request Headers</a></td></tr>");

@@ -35,7 +35,7 @@ public class PageRefreshCounter extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        response.setIntHeader("Refresh",5);
+        response.setIntHeader("Refresh",1);
         Calendar calendar = new GregorianCalendar();
         String am_pm;
         int hour = calendar.get(Calendar.HOUR);
@@ -57,7 +57,7 @@ public class PageRefreshCounter extends HttpServlet {
             out.println("<title>Servlet PageRefreshCounter</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<center><h1>Auto Page Refresh Counter</h1>");
+            out.println("<center><h1 style='color: #6d435a; background-color:#b1ede8; padding:8px ;border-radius: 8px; width:fit-content;'>Auto Page Refresh Counter</h1></center>");
             //out.println("<h1>Servlet PageRefreshCounter at " + request.getContextPath() + "</h1>");
             out.println("<h2 align='center'>Number of page hits is: " + hitcounter);
             out.println("<br>Current Time: " + CT + "</h2>");
