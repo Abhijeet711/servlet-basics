@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.*;
 import javax.servlet.RequestDispatcher;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -57,10 +58,12 @@ public class login extends HttpServlet {
                 }
                 if(id!=null){
                     out.println("<br><center>login successful for user " + r2 + "</center>");
-                    RequestDispatcher rd = request.getRequestDispatcher("home.html");
-                    rd.include(request, response);
-                    
-                }else{                    
+                    RequestDispatcher rd = request.getRequestDispatcher("Home");
+                    HttpSession hs = request.getSession();
+                    hs.setAttribute("email",r2);
+                    rd.forward(request, response);
+                    //response.sendRedirect("home.html");
+                }else{            
                     out.println("<center style='font-weight:bold;font-size:40px;color:red;background-color:black'>Login failed, incorrect email or password.</center><br><br>");
                     RequestDispatcher rd = request.getRequestDispatcher("loginform.html");
                     rd.include(request, response);

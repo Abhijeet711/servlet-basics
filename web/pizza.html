@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Order Here!</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="styles.css">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <div>
+            <form action="pizza" method="post">
+                <fieldset style="margin:auto; padding:20px; width: 430px; height: 300px; font-size:20px">
+                    <legend>Select your pizza</legend>
+                    <label>Enter your name: </label>
+                    <input type="text" name="name" autocomplete="off" id="text"><br><br>
+                    <label>Select Base: </label>
+                    <select name="base" style="font-size: 20px; border:1px solid #004080;">
+                        <option value="sbg">--select--</option>
+                        <option value="thin">Thin Crust</option>
+                        <option value="cheese">Cheese Burst</option>
+                        <option value="fresh">Fresh Pan</option>
+                    </select><br><br>
+                    <label>Select Size: </label>
+                    <select name="size" style="font-size: 20px; border:1px solid #004080;">
+                        <option value="sfs">--select--</option>
+                        <option value="regular">Regular</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                    </select><br><br>
+                    <label>Select Toppings(Veg): </label>
+                    <select name="vegtop" style="font-size: 20px; border:1px solid #004080;">
+                        <option value="sfc">--select--</option>
+                        <option value="paneer">Paneer</option>
+                        <option value="mushroom">Mushroom</option>
+                        <option value="corn">Corn</option>
+                    </select><br><br>
+                    <label>Select Toppings(Non-Veg): </label>
+                    <select name="nvegtop" style="font-size: 20px; border:1px solid #004080;">
+                        <option value="sff">--select--</option>
+                        <option value="pepperoni">Pepperoni</option>
+                        <option value="sausage">Sausage</option>
+                        <option value="meatballs">Meatball</option>
+                    </select><br><br>
+                    <center>
+                        <input id="button" type="submit" value="Submit">
+                        <input id="button" type="reset" value="Clear Form">
+                    </center>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>

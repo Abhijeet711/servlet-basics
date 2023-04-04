@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -74,6 +75,8 @@ public class textcolor extends HttpServlet {
         int s2 = Integer.parseInt(request.getParameter("fsz"));
         String s3 = request.getParameter("fc");
         String s4 = request.getParameter("ff");
+        HttpSession hs = request.getSession(true);
+        String email = (String) hs.getAttribute("email2");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
@@ -84,7 +87,7 @@ public class textcolor extends HttpServlet {
                     + "    color:"+s3+";\n"
                     + "    font-family:"+s4+";\n"
                     + "border: 2px solid black; border-radius:5px; margin:auto; height:auto; width:fit-content;}</style></head>");
-            out.println("<body><br>your text is: " + s0 + "<br>");
+            out.println("<body><h2>Welcome " + email + "</h2>your text is: " + s0 + "<br>");
             out.println("you have selected this background color: " + s1 + "<br>");
             out.println("you have selected this font size: " + s2 + "<br>");
             out.println("you have selected this font color: " + s3 + "<br>");

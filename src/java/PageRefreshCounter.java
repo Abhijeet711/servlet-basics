@@ -6,6 +6,8 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,9 +15,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Abhi
+ * @author studentadmin
  */
-public class PageHitCounter extends HttpServlet {
+public class PageRefreshCounter extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -26,7 +28,6 @@ public class PageHitCounter extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
     int hitcounter = 0;
     public void init(){
         hitcounter=0;
@@ -34,18 +35,32 @@ public class PageHitCounter extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        response.setIntHeader("Refresh",5);
+        Calendar calendar = new GregorianCalendar();
+        String am_pm;
+        int hour = calendar.get(Calendar.HOUR);
+        int minute = calendar.get(Calendar.MINUTE);
+        int second = calendar.get(Calendar.SECOND);
+        if(calendar.get(Calendar.AM_PM)==0){
+            am_pm="AM";
+        }
+        else{
+            am_pm="PM";
+        }
+        String CT = hour + ":" + minute + ":" + second + " " + am_pm;
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             hitcounter++;
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head><link rel=\"stylesheet\" href=\"styles.css\">");
-            out.println("<title>Servlet PageHitCounter</title>");            
+            out.println("<title>Servlet PageRefreshCounter</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<center><h1>Page Hit Counter</h1>");
-            //out.println("<h1>Servlet PageHitCounter at " + request.getContextPath() + "</h1>");
-            out.println("<h2>Number of page hits is: " + hitcounter + "</center></h2>");
+            out.println("<center><h1>Auto Page Refresh Counter</h1>");
+            //out.println("<h1>Servlet PageRefreshCounter at " + request.getContextPath() + "</h1>");
+            out.println("<h2 align='center'>Number of page hits is: " + hitcounter);
+            out.println("<br>Current Time: " + CT + "</h2>");
             out.println("</body>");
             out.println("</html>");
         }

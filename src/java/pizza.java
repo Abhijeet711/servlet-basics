@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Abhi
  */
-public class PageHitCounter extends HttpServlet {
+public class pizza extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -26,28 +26,34 @@ public class PageHitCounter extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    
-    int hitcounter = 0;
-    public void init(){
-        hitcounter=0;
-    }
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        String name = request.getParameter("name");
+        String base = request.getParameter("base");
+        String size = request.getParameter("size");
+        String vegtop = request.getParameter("vegtop");
+        String nvegtop = request.getParameter("nvegtop");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            hitcounter++;
             out.println("<!DOCTYPE html>");
             out.println("<html>");
-            out.println("<head><link rel=\"stylesheet\" href=\"styles.css\">");
-            out.println("<title>Servlet PageHitCounter</title>");            
+            out.println("<head>");
+            out.println("<title>Servlet pizza</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<center><h1>Page Hit Counter</h1>");
-            //out.println("<h1>Servlet PageHitCounter at " + request.getContextPath() + "</h1>");
-            out.println("<h2>Number of page hits is: " + hitcounter + "</center></h2>");
+            //out.println("<h1>Servlet pizza at " + request.getContextPath() + "</h1>");
+            out.println("your name is: " + name + ".<br>");
+            out.println("you've selected this base: " + base + ".<br>");
+            out.println("you've selected this size: " + size + ".<br>");
+            out.println("you've selected this veg topping: " + vegtop + ".<br>");
+            out.println("you've selected this non-veg topping: " + nvegtop + ".<br>");
             out.println("</body>");
             out.println("</html>");
+//            
+//            if(String random=="pepperoni" || random=="sausage"){
+//                out.println("price = 100");
+//            }
         }
     }
 
