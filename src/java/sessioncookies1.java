@@ -72,7 +72,7 @@ public class sessioncookies1 extends HttpServlet {
             out.println("<br><h1>Welcome " + un + "</h1>");
             Cookie c = new Cookie("username", un);
             response.addCookie(c);
-            out.println("<form action=\"sessioncookies2\" method=\"post\"><input type=\"submit\" value=\"Submit\">");
+            out.println("<form action=\"sessioncookies2\" method=\"post\"><input id='srbtn' type=\"submit\" value=\"Submit\">");
             out.println("</form></center></body>");
             out.println("</html>");
         }

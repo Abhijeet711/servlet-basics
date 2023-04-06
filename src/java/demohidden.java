@@ -40,14 +40,14 @@ public class demohidden extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             //out.println("<h1>Servlet demohidden at " + request.getContextPath() + "</h1>");
-            out.println("<br><fieldset style='padding:20px;'><center>Your name displayed in servlet1(demohidden) is: " + n + "<br><br>");
+            out.println("<br><fieldset><center>Your name displayed in servlet1(demohidden) is: " + n + "<br><br>");
             out.println("Your email displayed in servlet1(demohidden) is: " + em + "<br><br>");
             out.println("<form action='showhidden' method='post'>");
             out.println("<input type='hidden' name='t1' value="+n+">");
             out.println("<input type='hidden' name='t2' value="+em+">");
-            out.println("Enter your country:&nbsp;&nbsp;&nbsp;<input autocomplete=off required type=\"text\" name=\"t3\"><br><br>");
-            out.println("<input type='submit' value='Submit'>");
-            out.println("<input type='reset' value='Clear Form'></fieldset></form></center>");
+            out.println("Enter your country:&nbsp;&nbsp;&nbsp;<input id='intext' autocomplete=off required type=\"text\" name=\"t3\"><br><br>");
+            out.println("<input id='srbtn' type='submit' value='Submit'>");
+            out.println("<input id='srbtn' type='reset' value='Clear Form'></fieldset></form></center>");
             out.println("</body>");
             out.println("</html>");
         }

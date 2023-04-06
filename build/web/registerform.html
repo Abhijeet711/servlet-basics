@@ -23,40 +23,40 @@ and open the template in the editor.
     </head>
     <body>
         <div>
-            <center><h1 style="color: #6d435a; background-color:#b1ede8; padding:8px ;border-radius: 8px; width:fit-content;">Registration Form</h1></center>
+            <center><h1 id="heading">Registration Form</h1></center>
             <form action="register" method="post">
-                <fieldset style="margin:auto; padding:20px; width: 440px; height: 480px;">
+                <fieldset>
                     <label for="fname">First Name: </label>
-                    <input type="text" style="float:right" name="fname" autocomplete="off"><br><br>
+                    <input id='intext' type="text" style="float:right" name="fname" autocomplete="off"><br><br>
                     <label for="lname">Last Name: </label>
-                    <input type="text" style="float:right" name="lname" autocomplete="off"><br><br>
+                    <input id='intext' type="text" style="float:right" name="lname" autocomplete="off"><br><br>
                     <label for="email">Email: </label>
-                    <input type="email" style="float:right" name="email" autocomplete="off"><br><br>
+                    <input id='intext' type="email" style="float:right" name="email" autocomplete="off"><br><br>
                     <label for="phone">Phone Number: </label>
-                    <input type="text" style="float:right" name="phone" title="Enter 10 digit phone number" pattern="[1-9]{1}[0-9]{9}" autocomplete="off"><br><br>
+                    <input id='intext' type="text" style="float:right" name="phone" title="Enter 10 digit phone number" pattern="[1-9]{1}[0-9]{9}" autocomplete="off"><br><br>
                     <label for="pass">Password: </label>
-                    <input type="password" id="password" style="float:right" name="pass" autocomplete="off"><br><br>
-                    <label for="cpass">Re-enter Password: </label>
-                    <input type="password" id="cpassword" style="float:right" name="cpass" autocomplete="off"><br><br>
+                    <input id='intext' type="password" id="password" style="float:right" name="pass" autocomplete="off"><br><br>
+                    <label for="cpass">Re-enter Password: &nbsp&nbsp</label>
+                    <input id='intext' type="password" id="cpassword" style="float:right" name="cpass" autocomplete="off"><br><br>
                     <label for="gender" style="padding-right: 85px">Gender: </label>
-                    <label for="gender">&nbsp&nbsp&nbsp Male</label>
+                    <label for="gender">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Male</label>
                     <input type="radio" name="gender" id="1" value="Male">
                     <label for="gender">Female</label>
                     <input type="radio" name="gender" id="2" value="Female">
                     <br><br>
                     <label for="lang">Mother Tongue: </label>
-                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<select name="lang" style=" font-size: 20px; border:1px solid #004080;">
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<select id='intext' name="lang" style=" font-size: 20px; border:1px solid #004080;">
                         <option value="sl">--select language--</option>
                         <option value="Hindi">Hindi</option>
                         <option value="Marathi">Marathi</option>
                         <option value="English">English</option>
                     </select><br><br>
                     <label for="dob">Date of Birth: </label>
-                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="date" name="dob">
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input id='intext' type="date" name="dob">
                     <br><br>
                      <center>
-                        <input type="submit" value="Register">
-                        <input type="reset" value="Clear Form"> 
+                        <input id='srbtn' type="submit" value="Register">
+                        <input id='srbtn' type="reset" value="Clear Form"> 
                      </center><br>
                      <label>Already have an account? Login </label><a href="loginform.html">here!</a>
                 </fieldset>

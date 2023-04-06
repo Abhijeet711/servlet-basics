@@ -13,16 +13,16 @@ and open the template in the editor.
     </head>
     <body>
         <div>
-            <center><h1 style="color: #6d435a; background-color:#b1ede8; padding:8px ;border-radius: 8px; width:fit-content;">Login Form</h1></center>
+            <center><h1 id="heading">Login Form</h1></center>
             <form action="login" method="post">
-                <fieldset style="margin:auto; padding:20px; width: 380px; height: 170px;">
-                    <label for="email" style="padding-right: 51px">Email: </label>
-                    <input type="email" name="email" autocomplete="off"><br><br>
+                <fieldset>
+                    <label for="email" style="padding-right: 59px">Email: </label>
+                    <input id='intext' type="email" name="email" autocomplete="off"><br><br>
                     <label for="pass" style="padding-right: 20px">Password: </label>
-                    <input type="password" name="pass" autocomplete="off"><br><br>
+                    <input id='intext' type="password" name="pass" autocomplete="off"><br><br>
                     <center>
-                        <input type="submit" value="Login" style="font-size: 20px; border:1px solid #004080;">
-                        <input type="reset" value="Clear Form" style="font-size: 20px; border:1px solid #004080;">
+                        <input id='srbtn' type="submit" value="Login">
+                        <input id='srbtn' type="reset" value="Clear Form">
                     </center><br>
                     <label>Don't have an account? Register </label><a href="registerform.html">here!</a>
                 </fieldset>

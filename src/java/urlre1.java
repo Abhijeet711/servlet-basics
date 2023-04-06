@@ -57,7 +57,7 @@ public class urlre1 extends HttpServlet {
             out.println("</head>");
             out.println("<body><center>");
             out.println("<br><h1>Welcome " + name + "</h1>");
-            out.println("<a style='font-size:25px' href='urlre2?name=" + name + "'>Output here</a>");
+            out.println("<a id='heading' href='urlre2?name=" + name + "'>Output here</a>");
             out.println("</body>");
             out.println("</html>");
         }

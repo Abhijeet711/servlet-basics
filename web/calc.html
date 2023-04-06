@@ -13,13 +13,13 @@ and open the template in the editor.
     </head>
     <body>
         <div>
-            <center><h1 style="color: #6d435a; background-color:#b1ede8; padding:8px ;border-radius: 8px; width:fit-content;">Welcome to Calculator</h1></center>
+            <center><h1 id="heading">Welcome to Calculator</h1></center>
             <form action="calc" method="post">
-                <fieldset style="margin:auto; padding:20px; width: 510px; height: 300px">
-                    <label for="n1">Enter First Number:&nbsp&nbsp&nbsp&nbsp</label>
-                    <input type="number" id="n1" name="n1" autocomplete="off"><br><br>
-                    <label for="n2">Enter Second Number:</label>
-                    <input type="number" id="n2" name="n2" autocomplete="off"><br><br>
+                <fieldset>
+                    <label for="n1">Enter First Number:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+                    <input id='intext' type="number" id="n1" name="n1" autocomplete="off"><br><br>
+                    <label for="n2">Enter Second Number:&nbsp&nbsp</label>
+                    <input id='intext' type="number" id="n2" name="n2" autocomplete="off"><br><br>
                     <label for="op">Select your arithmetic operation:</label><br>
                     Addition<input type="radio" id="op" name="op" value="+"><br>
                     Subtraction<input type="radio" id="op" name="op" value="-"><br>
@@ -28,8 +28,8 @@ and open the template in the editor.
                     Modulus<input type="radio" id="op" name="op" value="%"><br>
                     <br>
                     <center>
-                        <input type="submit" value="Submit" style="padding: 5px; font-weight: bold;font-size: 1em; border:1px solid #004080;">
-                        <input type="reset" style="padding: 5px; font-weight: bold;font-size: 1em; border:1px solid #004080;">
+                        <input id='srbtn' type="submit" value="Submit">
+                        <input id='srbtn' type="reset">
                     </center>
                 </fieldset>
             </form>

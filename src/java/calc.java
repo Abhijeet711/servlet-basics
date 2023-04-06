@@ -105,9 +105,10 @@ public class calc extends HttpServlet {
             out.println("<html>");
             out.println("<head><link rel=\"stylesheet\" href=\"styles.css\">");
             out.println("<title>Servlet Calculator</title></head>");
-            out.println("<body style=\"margin:auto; width: 360px; height: 200px; margin-top:20px; padding-top:20px; border:2px solid black; font-size: 20px;\">");
+            out.println("<body><center>");
+            out.println("<h1 id='heading'>Output</h1></center>");
             //out.println("<h1>Servlet calc at " + request.getContextPath() + "</h1>");
-            out.println("number 1: " + n1 + "<br>");
+            out.println("<fieldset>number 1: " + n1 + "<br>");
             out.println("number 2: " + n2 + "<br>");
             out.println("selected arithmetic operation is: " + op);
             switch (op) {
@@ -127,7 +128,7 @@ public class calc extends HttpServlet {
                     result = n1%n2;
                     break;
             }
-            out.println("<div>output is: " + result + "</div></body></html>");
+            out.println("<div>output is: " + result + "</div></fieldset></body></html>");
         }
     }
 

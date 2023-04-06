@@ -87,12 +87,11 @@ public class textcolor extends HttpServlet {
                     + "    color:"+s3+";\n"
                     + "    font-family:"+s4+";\n"
                     + "border: 2px solid black; border-radius:5px; margin:auto; height:auto; width:fit-content;}</style></head>");
-            out.println("<body><h2>Welcome " + email + "</h2>your text is: " + s0 + "<br>");
+            out.println("<body><center><h2 id='heading'>Welcome " + email + "</h2><h3 id='heading'>Output</h3></center><fieldset>your text is: " + s0 + "<br>");
             out.println("you have selected this background color: " + s1 + "<br>");
             out.println("you have selected this font size: " + s2 + "<br>");
             out.println("you have selected this font color: " + s3 + "<br>");
-            out.println("you have selected this font family: " + s4 + "<br>");
-            out.println("<br><br>");
+            out.println("you have selected this font family: " + s4 + "<br><br>");
             out.println("<div>"+s0+"</div>");
             out.println("</body></html>");
         }

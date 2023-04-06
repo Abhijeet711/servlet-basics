@@ -66,7 +66,7 @@ public class register extends HttpServlet {
                 Class.forName("com.mysql.jdbc.Driver");
                 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","");
                 if(!r4.equals(r8)){
-                    out.println("<center style='font-weight:bold;font-size:40px;color:red;background-color:black'>Passwords do not match, please try again.</center><br><br>");
+                    out.println("<center id='failed'>Passwords do not match, please try again.</center>");
                     RequestDispatcher rd = request.getRequestDispatcher("registerform.html");
                     rd.include(request, response);
                 }
@@ -100,7 +100,7 @@ public class register extends HttpServlet {
 //                System.out.println("executed: " + i);
 //                response.sendRedirect("loginform.html");
                 conn.close();
-            }catch(ClassNotFoundException |SQLException e){
+            }catch(ClassNotFoundException | SQLException e){
                 e.printStackTrace();
             }
             out.println("</body>");

@@ -41,7 +41,7 @@ public class showhidden extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             //out.println("<h1>Servlet showhidden at " + request.getContextPath() + "</h1>");
-            out.println("<br><fieldset style='padding:20px;'><center>Your name displayed in servlet2(showhidden) is: " + n + "<br><br>");
+            out.println("<br><fieldset><center>Your name displayed in servlet2(showhidden) is: " + n + "<br><br>");
             out.println("Your email displayed in servlet2(showhidden) is: " + em + "<br><br>");
             out.println("Your country displayed in servlet2(showhidden) is: " + c + "<br>");
             out.println("<form action='' method=''>");

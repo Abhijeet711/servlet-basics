@@ -38,7 +38,7 @@ public class login extends HttpServlet {
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
-            out.println("<head><style>body{background-color: palevioletred;font-size: 20px;} legend{font-weight: bold;} input{ font-size: 20px; border:1px solid #004080} label{font-weight: bold;} th, td{ padding: 15px; }</style>");
+            out.println("<head>");
             out.println("<title>Servlet login</title>");            
             out.println("</head>");
             out.println("<body>");
@@ -64,7 +64,7 @@ public class login extends HttpServlet {
                     rd.forward(request, response);
                     //response.sendRedirect("home.html");
                 }else{            
-                    out.println("<center style='font-weight:bold;font-size:40px;color:red;background-color:black'>Login failed, incorrect email or password.</center><br><br>");
+                    out.println("<center id='failed'>Login failed, incorrect email or password.</center>");
                     RequestDispatcher rd = request.getRequestDispatcher("loginform.html");
                     rd.include(request, response);
                     //response.sendRedirect("loginfail.html");

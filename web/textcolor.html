@@ -9,29 +9,15 @@ and open the template in the editor.
         <title>Color!</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-            #button {
-                padding: 5px;
-                font-weight: bold;
-                font-size: 1em;
-                border:1px solid #004080;
-            }
-            #text{
-                padding: 5px;
-                font-size: 1em;
-                border:1px solid #004080;
-            }
-            
-        </style>
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
     <div>
-        <center><h1 style="color: #6d435a; background-color:#b1ede8; padding:8px ;border-radius: 8px; width:fit-content;">Welcome to Text-Color</h1></center>
+        <center><h1 id="heading">Welcome to Text-Color</h1></center>
             <form action="textcolor" method="get">
-                <fieldset style="margin:auto; padding:20px; width: 430px; height: 290px; font-size:20px">
+                <fieldset>
                     <label for="text">Enter your text: </label>
-                    <input type="text" name="text" autocomplete="off" id="text"><br><br>
+                    <input type="text" name="text" autocomplete="off" id='intext'><br><br>
                     <label for="bgc">Select Background Color: </label>
                     <select name="bgc" style="font-size: 20px; border:1px solid #004080;">
                         <option value="sbg">--select--</option>
@@ -93,8 +79,8 @@ and open the template in the editor.
                         <option value="Cambria">Cambria</option>
                     </select><br><br>
                     <center>
-                        <input id="button" type="submit" value="Submit">
-                        <input id="button" type="reset" value="Clear Form">
+                        <input id='srbtn' type="submit" value="Submit">
+                        <input id='srbtn' type="reset" value="Clear Form">
                     </center>
                 </fieldset>
             </form>

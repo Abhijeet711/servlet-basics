@@ -43,7 +43,7 @@ public class PageHitCounter extends HttpServlet {
             out.println("<title>Servlet PageHitCounter</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<center><h1 style='color: #6d435a; background-color:#b1ede8; padding:8px ;border-radius: 8px; width:fit-content;'>Page Hit Counter</h1>");
+            out.println("<center><h1 id='heading'>Page Hit Counter</h1>");
             //out.println("<h1>Servlet PageHitCounter at " + request.getContextPath() + "</h1>");
             out.println("<h2>Number of page hits is: " + hitcounter + "</center></h2>");
             out.println("</body>");
