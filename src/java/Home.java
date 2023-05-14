@@ -51,9 +51,9 @@ public class Home extends HttpServlet {
             out.println("<tr><td>7</td><td><a href='urlrewrite.html'>Web application to demonstrate the use of URL Rewriting in session tracking</a></td></tr>");
             out.println("<tr><td>8</td><td><a href='sessioncookies.html'>Web application to demonstrate the use of cookies in session tracking</a></td></tr>");
             out.println("<tr><td>9</td><td><a href='hidden.html'>Web application to demonstrate the use of hidden fields in session tracking</a></td></tr>");
-            out.println("<tr><td>10</td><td><a href='LINK'>Web application to display result online, display mark sheet in appropriate format</a></td></tr>");
-            out.println("<tr><td>11</td><td><a href='PageRefresh'>Web application to implement page refresh</a></td></tr>");
-            out.println("<tr><td>12</td><td><a href='PageRefreshCounter'>Web application to implement auto page refresh counter</a></td></tr>");
+//            out.println("<tr><td>10</td><td><a href='LINK'>Web application to display result online, display mark sheet in appropriate format</a></td></tr>");
+            out.println("<tr><td>10</td><td><a href='PageRefresh'>Web application to implement page refresh</a></td></tr>");
+            out.println("<tr><td>11</td><td><a href='PageRefreshCounter'>Web application to implement auto page refresh counter</a></td></tr>");
             //out.println("<tr><td>PRACTICAL NO</td><td><a href='LINK'>PRACTICAL NAME</td></tr>");
         }
     }
